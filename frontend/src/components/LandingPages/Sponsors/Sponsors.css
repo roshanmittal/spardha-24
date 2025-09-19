@@ -17,72 +17,75 @@
   height: 70vh;
   min-height: 400px;
   overflow: hidden;
-}
 
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-   background-image: url('sports-arena.jpg'); 
+  /* background image */
+  background-image: url('sports-arena.jpg');
   background-size: cover;
   background-position: center;
+
+  /* center text */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(14, 20, 32, 0.6);
+  inset: 0;
+  background: rgba(14, 20, 32, 0.65);
+  z-index: 1;
 }
 
-.hero-content {
+/* Headline and paragraph on bg */
+.sponsors-hero h1,
+.sponsors-hero p {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 0 20px;
 }
 
-.hero-content h1 {
+.sponsors-hero h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, #2de3b6, #4abfe6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
 }
 
-.hero-content p {
-  font-size: 1.3rem;
-  font-weight: 300;
-  max-width: 600px;
+.sponsors-hero p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 650px;
   margin: 0 auto;
-  color: #eaf2ff;
+  color: #eaf6ff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Intro Footnote */
 .sponsors-intro {
   background-color: #0e1420;
-  padding: 20px 0 30px;
+  padding: 25px 0 35px;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sponsors-intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  margin-bottom: 12px;
   color: #2de3b6;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .sponsors-intro p {
   font-size: 1rem;
-  line-height: 1.5;
-  max-width: 700px;
+  line-height: 1.6;
+  max-width: 720px;
   margin: 0 auto;
   color: #cfd8e3;
 }
@@ -172,12 +175,12 @@
     height: 55vh;
   }
 
-  .hero-content h1 {
+  .sponsors-hero h1 {
     font-size: 2.5rem;
   }
 
-  .hero-content p {
-    font-size: 1.1rem;
+  .sponsors-hero p {
+    font-size: 1.05rem;
   }
 
   .sponsors-grid {
@@ -186,8 +189,12 @@
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
+  .sponsors-hero h1 {
     font-size: 2rem;
+  }
+
+  .sponsors-hero p {
+    font-size: 1rem;
   }
 
   .sponsors-grid {

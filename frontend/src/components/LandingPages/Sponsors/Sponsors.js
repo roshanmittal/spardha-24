@@ -47,13 +47,13 @@ export default function Sponsors() {
        
       <section className="sponsors-hero">
         
-        <div className="hero-image">
+        {/* <div className="hero-image"> */}
           <div className="hero-overlay"></div>
-          <div className="hero-content">
+          {/* <div className="hero-content"> */}
             <h1>Our Valued Sponsors</h1>
             <p>Powering exceptional sporting experiences</p>
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </section>
 
       {/* Transition Element */}
