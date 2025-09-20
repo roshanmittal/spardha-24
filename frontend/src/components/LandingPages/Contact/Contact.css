@@ -15,7 +15,7 @@ body {
 
 #contactus {
   position: relative;
-  display: flex;
+  display: absolute;
   justify-content: center;
   align-items: center;
   /* margin-bottom: 2rem; */
@@ -25,7 +25,7 @@ body {
 height: fit-content;
 }
 
-.container {
+.container-us {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

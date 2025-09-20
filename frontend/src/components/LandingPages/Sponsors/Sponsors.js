@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sponsors.css';
+
 
 const SPONSORS = [
   { name: 'Amul', website: 'https://amul.com', logo: '/images/sponsors/after2023/amul.png' },
@@ -41,32 +42,50 @@ function initialsOf(name) {
 }
 
 export default function Sponsors() {
-  return (
-    <div className="sponsors-page">
-      {/* Hero Section with Sports Arena Image */}
-       
-      <section className="sponsors-hero">
-        
-        {/* <div className="hero-image"> */}
-          <div className="hero-overlay"></div>
-          {/* <div className="hero-content"> */}
-            <h1>Our Valued Sponsors</h1>
-            <p>Powering exceptional sporting experiences</p>
-          {/* </div> */}
-        {/* </div> */}
-      </section>
+  const [isMounted, setIsMounted] = useState(false);
 
-      {/* Transition Element */}
-      <div className="transition-curve"></div>
+  useEffect(() => {
+  document.querySelector('.mobile-sidebar')?.classList.remove('open');
+  document.querySelector('.sidebar-backdrop')?.classList.remove('active');
+}, []);
+
+  useEffect(() => {
+    // Set mounted state after a small delay
+    const timer = setTimeout(() => {
+      setIsMounted(true);
+    }, 50);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Force remount when route changes
+  useEffect(() => {
+    // This will run every time the component is mounted
+    window.scrollTo(0, 0);
+    
+    return () => {
+      // Cleanup when component unmounts
+      setIsMounted(false);
+    };
+  }, []);
+
+  return (
+    <div className={`sponsors-page ${isMounted ? 'mounted' : ''}`}>
+      {/* Hero Section with Sports Arena Image */}
+      <section className="sponsors-hero">
+        <div className="hero-overlay"></div>
+        <h1>Our Valued Sponsors</h1>
+        <p>Powering exceptional sporting experiences</p>
+      </section>
 
       {/* Intro Text Section */}
       <section className="sponsors-intro">
         <div className="container">
           <h2>Our Past Sponsors</h2>
           <p>
-            “With Spardha, our annual sports fest, 
+            "With Spardha, our annual sports fest, 
             we strive to bridge students with industry while celebrating the spirit of sports. 
-            Our sponsors make this possible by fueling our vision with both resources and experience.”
+            Our sponsors make this possible by fueling our vision with both resources and experience."
           </p>
         </div>
       </section>
@@ -90,12 +109,18 @@ export default function Sponsors() {
                         alt={sponsor.name}
                         loading="lazy"
                         className="sponsor-logo"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          const fallback = e.target.nextSibling;
+                          if (fallback && fallback.classList.contains('logo-fallback')) {
+                            fallback.style.display = 'flex';
+                          }
+                        }}
                       />
-                    ) : (
-                      <div className="logo-fallback">
-                        {initialsOf(sponsor.name)}
-                      </div>
-                    )}
+                    ) : null}
+                    <div className="logo-fallback" style={sponsor.logo ? {display: 'none'} : {}}>
+                      {initialsOf(sponsor.name)}
+                    </div>
                   </div>
                   <span className="sponsor-name">{sponsor.name}</span>
                 </a>

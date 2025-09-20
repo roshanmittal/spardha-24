@@ -3,6 +3,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   overflow-x: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sponsors-page.mounted {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .container {
@@ -34,7 +42,10 @@
 
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(14, 20, 32, 0.65);
   z-index: 1;
 }
@@ -72,6 +83,13 @@
   padding: 25px 0 35px;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.sponsors-intro .container {
+  width: 100%;
 }
 
 .sponsors-intro h2 {
@@ -132,6 +150,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .sponsor-logo {
@@ -170,6 +189,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr); /* Always 2 cards */
+  }
+}
+
 @media (max-width: 768px) {
   .sponsors-hero {
     height: 55vh;
@@ -183,12 +208,18 @@
     font-size: 1.05rem;
   }
 
-  .sponsors-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  .sponsors-intro {
+    min-height: 140px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .sponsors-grid {
+    grid-template-columns: 1fr; /* Always 1 card */
+    max-width: 350px;
+    margin: 20px auto;
+  }
+
   .sponsors-hero h1 {
     font-size: 2rem;
   }
@@ -197,9 +228,7 @@
     font-size: 1rem;
   }
 
-  .sponsors-grid {
-    grid-template-columns: 1fr;
-    max-width: 300px;
-    margin: 20px auto;
+  .sponsors-intro {
+    min-height: 160px;
   }
 }
