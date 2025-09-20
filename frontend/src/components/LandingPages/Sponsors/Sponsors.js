@@ -9,7 +9,7 @@ const SPONSORS = [
   { name: 'ixigo', website: 'https://www.ixigo.com', logo: '/images/sponsors/after2023/ixigo.png' },
   { name: 'Nestlé', website: 'https://www.nestle.in', logo: '/images/sponsors/after2023/nestle.png' },
   { name: 'Royal Enfield', website: 'https://www.royalenfield.com', logo: '/images/sponsors/after2023/royal-enfield.png' },
-  { name: 'Volini', website: 'https://www.volini.in', logo: '/images/sponsors/after2023/volini.png' },
+  { name: 'Volini', website: 'https://www.volini.com', logo: '/images/sponsors/after2023/volini.png' },
   { name: 'Real', website: 'https://www.realfruitpower.com', logo: '/images/sponsors/after2023/real.png' },
   { name: 'Traya', website: 'https://traya.health', logo: '/images/sponsors/after2023/traya.png' },
   { name: 'NTPC (Vindhyachal)', website: 'https://www.ntpc.co.in', logo: '/images/sponsors/after2023/ntpc.png' },
