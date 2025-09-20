@@ -1,365 +1,355 @@
-.ftco_section {
-  margin: 100px 200px 0 200px;
-
-  position: relative;
-}
-.container {
-  width: 100%;
-  background-color: rgb(2,0,31);
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  height: 150%;
-  padding-bottom: 50px;
-}
-.container {
-  /* position: fixed; */
-  border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  /* background: rgba(255, 255, 255, 0.9); */
-  padding: 30px 50px;
-}
-.maindiv {
-  padding: 41px 35px;
+/* General Layout */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.title {
+  width: 100%;         /* or whatever container width */
+  height: 166px;       /* the "line height" container you want */
   display: flex;
-  flex-direction: row;
-  border-radius: 21px;
-  /* background: #fff; */
-  background-color: rgb(2,0,31);
-  height: 80vh;
-  overflow-y: auto;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
 }
-/* .maindiv::-webkit-scrollbar {
-  width: 0px;
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.maindiv::-webkit-scrollbar-thumb {
-  background-color: #760e53;
-  border-radius: 200px;
-} */
-.poster {
-  padding: 20px;
-  border-right: 1.5px solid #000;
-}
-.content {
-  margin: 12px 0 36px 36px;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1.5px solid #000;
-}
-.top {
-  justify-content: center;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.top h1 {
-  color:rgba(73, 130, 246, 1);
+
+
+.title h2 {
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
-  font-family: Poppins, sans-serif;
-  /* font-size: 28px; */
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: capitalize;
+  animation: slideDown 1s ease-out forwards;
+  padding-top: 2%;
 }
-.middle {
-  align-items: center;
+
+.title h2 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 5vw;       /* responsive font size */
+  color: white;
+  margin: 0;            /* remove default h2 margin */
+  line-height: 1;       /* make line height tight for flex centering */
+}
+/* Wrapper to allow absolute positioning */
+/* Polygon decorative elements */
+.polywhite {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  z-index: 10;
+}
+
+.polygonbg {
+  position: absolute;
+  top: -20px;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top: -110px;
+  z-index: -1;
+}
+
+.polywi {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* Enhanced outermostdiv to work with polygons */
+.outermostdiv {
+  position: relative;
+  background-color: #000d35;
+  border-radius: 40px;
+  padding: 40px 20px;
+  margin: 100px auto 40px auto;
+  width: 95%;
+  max-width: 1200px;
+  overflow: visible; /* Important for polygons to show outside container */
+  text-align: center;
+  color: white;
+}
+
+/* Responsive adjustments for polygons */
+@media (max-width: 768px) {
+  .polywhite {
+    width:100px;
+    height: 45px;
+    top: -25px;
+  }
+  
+  .polygonbg {
+    width: 100px;
+    height: 45px;
+    top: -15px;
+    right: -20px;
+  }
+  
+  .polywi {
+    width: 100px;
+    height: 45px;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .polywhite {
+    width: 80px;
+    height: 45px;
+    top: -25px;
+  }
+  
+  .polygonbg {
+    width: 80px;
+    height: 45px;
+    top: -15px;
+    right: -15px;
+  }
+  
+  .polywi {
+    width: 80px;
+    height: 45px;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+.maindiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 10%;
+}
+
+/* Poster */
+.poster img {
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Content area next to poster */
+.content {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  gap: 20px;
 }
-.discription {
-  color:white;
-  /* color: #000; */
-  text-align: center;
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.buttons {
-  gap: 5rem;
+
+/* Top section (controller + heading) */
+.top {
   display: flex;
-  padding-left: 40px;
+  align-items: center;
+  gap: 15px;
 }
-.buttons a {
-  border-radius: 35px;
-  border: 2px solid rgba(73, 130, 246, 1)  ;
-  padding: 9px 33px;
-  justify-content: center;
-  text-align: center;
+
+.top img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Middle description & buttons */
+.middle {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  font-weight: bold;
-  flex-shrink: 0;
-  color: white;
-  text-decoration: none;
-  font-family: Poppins, sans-serif;
-}
-.buttons a:hover{
-  background-color:  rgba(73, 130, 246, 1);
   color: #fff;
 }
-.top p {
-  /* color: #000; */
-  color:white;
-  text-align: center;
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+
+.middle .discription {
+  font-size: 1rem;
+  line-height: 1.4;
+  color:#fff;
 }
 
-.bottom {
-  align-items: center;
+/* Buttons */
+.buttons {
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-.bottom_heading {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 35px;
-}
-.hr {
-  width: 200px;
-  border-top: 1px solid black;
-}
-/*my try*/
-.cardmaindiv{
-  display: flex;
-  flex-direction: column;
-justify-content: center;
-align-items: center;
   gap: 10px;
   flex-wrap: wrap;
 }
-.btnclass{
-  border-radius: 35px;
-  border: 2px solid rgba(73, 130, 246, 1)  ;
-  padding: 9px 33px;
-  background-color: black;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  font-weight: bold;
-  flex-shrink: 0;
-  color: white;
-  text-decoration: none;
-  font-family: Poppins, sans-serif;
-}
-.btnclass:hover{
-  background-color:  rgba(73, 130, 246, 1);
+
+.btnclass {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #ff4c00;
   color: #fff;
-}
-.cardcon{margin-top: 20px;
-  width: fit-content;
-  /* height: 300px; */
-  padding-bottom: 20px;
-  background: rgba(2, 0, 33, 1);  
-  display: flex;
-  gap:20px;
-  color:white;
-  flex-direction: column;
-  border-radius: 20px;
-  border: 2px solid rgb(55, 0, 128);
-  justify-content: center;
-  align-items: center;
-}
-.cardcon:hover{
-  transform: scale(1.05);
-  transition-duration: 500ms;
-}
-.cardimg img{
- width:350px;
- border-top-right-radius: 20px;
- border-top-left-radius: 20px;
- object-fit: fill;
-}
-.formlink{
   text-decoration: none;
-  color: rgb(183,112,217);
-  font-weight: bold;
-  font-family:Poppins, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
-.prizepool{
+
+.btnclass:hover {
+  background-color: #ff6a33;
+}
+
+.registerbtn, .backbtn {
+  border: none;
+}
+
+/* Cards container */
+.cardmaindiv {
   display: flex;
-  flex-direction: column;
-  color: rgb(153,153,153);
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  align-items: center;
-}
-.formlink:hover{
-  color:aqua
-}
-.cardbottom{
-  padding: 5px;
-}
-.maindiv {
-  overflow: auto;
-}
-.maindiv::-webkit-scrollbar {
-  display: none; 
-}
-.maindiv {
-  scrollbar-width: none; /* Hides the scrollbar */
+  margin-top: 20px;
 }
 
-/*my try*/
-.bottom h3 {
-  /* color: #760e53; */
-  color: rgba(73, 130, 246, 1);
-  text-align: center;
-  font-family: Poppins, sans-serif;
-  /* font-size: 24px; */
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration-line: underline;
-}
-.contacts {
+/* Individual card */
+.cardcon {
+  background-color: #1e1e1e;
+  width: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 17rem;
-}
-.contact_card {
-  align-items: center;
-  display: flex;
+  
   flex-direction: column;
-  color: white;
-  text-align: center;
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.contact_card p {
-  font-weight: 400;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 1500px) {
-  .container {
-    padding: 20px;
+.cardcon:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Card image */
+.cardimg img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid #fff;
+}
+
+/* Card bottom content */
+.cardbottom {
+  padding: 15px;
+  display: flex;
+  font-family: 'Arial', sans-serif;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardbottom h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: aliceblue;
+  text-align: center;
+}
+.cardbottom h4 {
+  white-space: pre-line; /* respects \n as line breaks */
+}
+
+
+.prizepool h6 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: aliceblue;
+  text-align: center;
+}
+
+.prizepool p {
+  text-align: center;
+  color: aliceblue;
+  margin: 5px 0 0 0;
+}
+
+.prizepool a {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #ff4c00;
+  color: #fff;
+  text-decoration: none; /* Removes underline */
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+.prizepool p{
+  font-size: 1rem;
+}
+.prizepool p:hover{
+color: blue;
+
+}
+.prizepool a:hover {
+  background-color: #7e0900;
+  box-shadow: #1e1e1e;
+  text-decoration: none; /* Ensures no underline on hover too */
+}
+.formlink {
+  text-decoration: none !important;  /* remove underline from whole card link */
+  color: inherit;                   /* prevent blue default link text */
+  display: block;                   /* make the whole card clickable */
+}
+
+.formlink:hover {
+  text-decoration: none !important; /* keep underline away on hover */
+}
+.poster {
+  width: 100%;
+  max-width: 300px;  /* cap so it doesn’t get too large on big screens */
+  height: auto;      /* keeps aspect ratio */
+  margin: 0 auto;    /* center align */
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;    /* removes inline gaps */
+  border-radius: 8px; /* optional */
+}
+@media(max-width:320px)
+{
+  .poster{
+   
+  }
+  
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardcon {
+    width: 90%; /* two cards per row */
   }
   .maindiv {
-    padding: 20px;
-  }
-  .content {
-    margin-left: 15px;
-  }
-}
-@media (max-width: 1380px) {
-  .contacts {
-    gap: 6rem;
-  }
-  .hr {
-    width: 150px;
-  }
-  .buttons {
-    gap: 2.5rem;
-    padding-left: 0;
-  }
-  .bottom_heading {
-    gap: 20px;
-  }
-  .top h1 {
-    font-size: 28px;
-  }
-  .bottom h3 {
-    font-size: 24px;
-  }
-}
-@media (max-width: 1230px) {
-  .ftco_section {
-    margin: 100px 150px 0 150px;
-  }
-  .poster {
-    padding-left: 0;
-  }
-}
-@media (max-width: 1111px) {
-  .ftco_section {
-    margin: 100px 100px 0 100px;
-  }
-  .hr {
-    width: 125px;
-  }
-  .buttons {
-    gap: 1.5rem;
-  }
-}
-@media (max-width: 990px) {
-  .maindiv {
     flex-direction: column;
-  }
-  .poster {
-    border-right: none;
-    border-bottom: 1.5px solid black;
-    margin-bottom: 20px;
-    width: 100%;
-    justify-content: center;
-    display: flex;
+    align-items: center;
   }
 }
-@media (max-width: 720px) {
-  .poster {
-    margin-bottom: 0;
-    border-bottom: 2px solid black;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .content {
-    border: none;
-  }
-  .bottom {
-    border-top: 2px solid black;
-    padding-top: 20px;
-  }
-  .hr {
-    width: 0;
-  }
-  .top {
-    flex-direction: column;
-  }
-  .buttons {
-    flex-direction: column;
-  }
-  .contacts {
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-    align-items: flex-start;
-  }
-  .contact_card{
-    align-items: flex-start;
+
+@media (max-width: 480px) {
+  .cardcon {
+    width: 90%; /* one card per row */
   }
 }
-@media (max-width: 540px) {
-  .ftco_section {
-    margin: 100px 50px 0 50px;
+
+/* Mobile adjustments */
+
+
+@media(max-width: 320px) {
+  .title h2 {
+    font-size: 15vw; 
   }
 }
-@media (max-width: 450px) {
-  .ftco_section {
-    margin: 100px 30px 0 30px;
+@media(max-width: 768px) {
+  .title h2 {
+    font-size: 11vw; 
   }
-}
-@media (max-width: 395px) {
-  .ftco_section {
-    margin: 100px 11px 0 11px;
-  }
-}
-.outermostdiv{
-  width: 100vw;
-  height: 100vh;
 }
