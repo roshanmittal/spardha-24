@@ -105,12 +105,12 @@
 
 .para {
   font-family: Anta;
-  font-weight: 400;
+  font-weight: 10;
   font-style: Regular;
-  font-size: 22px;
-  line-height: 100%;
+  font-size: 26px;
+  line-height: 120%;
   letter-spacing: 0%;
-  text-align: center;
+  text-align: justify;
   color: #ffffff;
 }
 
