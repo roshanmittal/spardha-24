@@ -189,15 +189,21 @@
 }
 
 /* Responsive Design */
-@media (max-width: 900px) {
-  .sponsors-grid {
-    grid-template-columns: repeat(2, 1fr); /* Always 2 cards */
+/* Sponsors Mobile Adjustments */
+@media (max-width: 1400px){
+  .sponsors-hero h1{
+    font-size: 3rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .sponsors-hero {
-    height: 55vh;
+    height: auto;
+    min-height: 55vh;
   }
 
   .sponsors-hero h1 {
@@ -215,8 +221,8 @@
 
 @media (max-width: 600px) {
   .sponsors-grid {
-    grid-template-columns: 1fr; /* Always 1 card */
-    max-width: 350px;
+    grid-template-columns: 1fr;
+    max-width: 100%;
     margin: 20px auto;
   }
 
@@ -230,5 +236,15 @@
 
   .sponsors-intro {
     min-height: 160px;
+  }
+}
+
+@media (max-width: 450px) {
+  .sponsors-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .sponsors-hero p {
+    font-size: 0.9rem;
   }
 }
