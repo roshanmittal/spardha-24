@@ -13,13 +13,46 @@
   background: #000d35;
   opacity: 1;
   box-sizing: border-box;
+
+
+    --notch-width: 240px;   /* fixed width of trapezium cut */
+  --notch-depth: 34px;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+
 }
 
 .tag{
     font-family: Anton;
   font-weight: 100;
   font-style: Regular;
-  font-size: 65px;
+ font-size: clamp(32px, 8vw, 65px);
   line-height: 100%;
   letter-spacing: 0%;
   color: white;
@@ -51,6 +84,17 @@
   }
 }
 
+.bg-onset {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+}
+.bg-onset::-webkit-scrollbar {
+  display: none; 
+}
+
 
 .top-div {
   width: 100vw;
@@ -60,16 +104,19 @@
   align-items: center;
   gap: 40px;
   position: relative;
+  margin-bottom: 50px;
+  z-index: 10;
 }
 
 .main-heading {
   font-family: Anton;
   font-weight: 400;
   font-style: Regular;
-  font-size: 95px;
+  font-size: 85px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #000000;
+  color: whitesmoke;
+  text-shadow: 2px 2px 20px #000000;
   padding-top: 65px;
 }
 
@@ -80,15 +127,75 @@
   padding: 80px 60px;
   opacity: 1;
   background: #000d35;
+  --notch-width: 240px;   /* fixed width of trapezium cut */
+  --notch-depth: 34px;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
 }
 
 .rectangle-2 {
+    --notch-width: 240px;   /* fixed width of trapezium cut */
+  --notch-depth: 34px;
   position: relative;
   width: 31%;
   border-radius: 48px;
   padding: 70px 60px;
   opacity: 1;
   background: #000d35;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
 }
 
 .second-heading {
@@ -107,7 +214,7 @@
   font-family: Anta;
   font-weight: 10;
   font-style: Regular;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 120%;
   letter-spacing: 0%;
   text-align: justify;
@@ -223,6 +330,7 @@
   letter-spacing: 0%;
   color: white;
 }
+
 
 .form-data{
     display: flex;
@@ -368,5 +476,43 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Default for large screens */
+.gallery,
+.rectangle-1,
+.rectangle-2 {
+  --notch-width: 240px; 
+  --notch-depth: 34px;
+}
+
+/* Medium screens (tablet) */
+@media screen and (max-width: 1024px) {
+  .gallery,
+  .rectangle-1,
+  .rectangle-2 {
+    --notch-width: 180px;
+    --notch-depth: 28px;
+  }
+}
+
+/* Small screens (mobile) */
+@media screen and (max-width: 768px) {
+  .gallery,
+  .rectangle-1,
+  .rectangle-2 {
+    --notch-width: 140px;
+    --notch-depth: 24px;
+  }
+}
+
+/* Extra small screens (very small mobile) */
+@media screen and (max-width: 480px) {
+  .gallery,
+  .rectangle-1,
+  .rectangle-2 {
+    --notch-width: 110px;
+    --notch-depth: 20px;
   }
 }
