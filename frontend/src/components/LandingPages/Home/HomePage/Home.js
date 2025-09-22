@@ -1,7 +1,7 @@
 // import React from 'react';
 import './Home.css';
 import HeroSection from '../HeroSection/HeroSection';
-// import Home_Contact from '../Contact/Contact';
+import HomeContact from '../Contact/Contact';
 import About from '../About_section/About';
 import LocationCard from '../LocationCard/LocationCard';
 
@@ -14,8 +14,9 @@ function App() {
         <div className='second-container'>
           <About/>
           <LocationCard/>
+          {/* <ContactForm /> */}
         </div>
-        {/* <Home_Contact/> */}
+        <HomeContact/>
       </div>
   );
 }
