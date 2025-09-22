@@ -37,6 +37,7 @@ useEffect(() => {
     <section className={styles.about}>
       {/* Top Section */}
       <div className={styles.topSection}>
+        <div className={styles.heading_a}>ABOUT US</div>
         <div className={styles.textContent}>
           <p className={styles.boldText}>
             Spardha, the annual sports fest of IIT BHU, is a celebration of

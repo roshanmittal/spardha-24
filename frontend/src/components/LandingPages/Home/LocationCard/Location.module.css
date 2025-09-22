@@ -13,7 +13,7 @@
   padding: 2.5rem;
   aspect-ratio: 16/7;
   width: 95%;
-  max-width: 1200px; /* Optional max width */
+  max-width: 1300px; /* Optional max width */
   margin-bottom: 100px;
   flex-wrap: wrap; /* helps on smaller screens */
 }

@@ -12,7 +12,7 @@
   padding-bottom: 90px;
   box-sizing: border-box;
   width: 100%; /* <-- Take 90% of parent */
-  max-width: 1200px; /* Optional max width */
+  max-width: 1300px; /* Optional max width */
 }
 
 /* ---------- Top Section ---------- */
@@ -22,6 +22,14 @@
   gap: 2rem;
   margin-bottom: 2rem;
   justify-content: space-between;
+}
+
+.heading_a{
+  font-size: clamp(45px, 5vw, 70px);
+  font-weight: 400;
+  font-family: Anta;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
 }
 
 .title {
