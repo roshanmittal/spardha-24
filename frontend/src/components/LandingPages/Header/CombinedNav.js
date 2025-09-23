@@ -8,7 +8,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Events', path: '/events' },
-  // { name: 'E-Spardha', path: '/espardha' },
+  { name: 'E-Spardha', path: '/espardha' },
   { name: 'Contact Us', path: '/contactus' },
   { name: 'Sponsors', path: '/sponsors' },
 ];
@@ -36,7 +36,9 @@ useEffect(() => {
 }, []);
   return (
     <div className="top-bar">
+    <Link to="/">
       <img src="/images/logo/white_logo_25.png" alt="Spardha Logo" className="logo" />
+    </Link>
 
       <div className="nav-links">
       <nav className="navbar">
