@@ -10,7 +10,7 @@ import NotFound from './components/LandingPages/NotFound/NotFound';
 // import { Carousel } from 'react-responsive-carousel';
 import ShowTable from './components/LandingPages/UserData/ShowTable';
 import ShowallTable from './components/LandingPages/UserData/ShowallTable';
-import ComingSoon from './components/LandingPages/ComingSoon/ComingSoon.js';
+// import ComingSoon from './components/LandingPages/ComingSoon/ComingSoon.js';
 // import { AllGameFixtures } from './components/LandingPages/UserData/AllGameFixtures';
 
 const LandingPages = React.lazy(() =>
@@ -84,9 +84,9 @@ const Footer1 = React.lazy(() =>
 const Matches = React.lazy(() =>
   import('./components/LandingPages/matches/matches')
 );
-// const Espardha = React.lazy(() =>
-//   import('./components/LandingPages/Espardha/Espardha')
-// );
+const Espardha = React.lazy(() =>
+  import('./components/LandingPages/Espardha/Espardha')
+);
 
 function usePageViews() {
   let location = useLocation();
@@ -197,8 +197,8 @@ function App() {
             path="espardha"
             element={
               <Suspense fallback={<Preloader />}>
-                {/* <Espardha /> */}
-                <ComingSoon/>
+                {<Espardha /> }
+                {/* <ComingSoon/> */}
                 <Footer />
               </Suspense>
             }
