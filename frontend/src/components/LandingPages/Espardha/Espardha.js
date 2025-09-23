@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Espardha.module.css";
 import poster from "./img/poster25.png";
 import controler from "./img/control.png";
-import pdf from "./ESPARDHA24.pdf";
+// import pdf from "./ESPARDHA24.pdf";
 import valorent from "./img/valorent.png";
 import bgmi from "./img/bgmi.png";
 import freefire from "./img/freefire1.png";
@@ -13,9 +13,9 @@ import polygonw from "./img/polyw.png";
 import polygonwi from "./img/polywi.png"
 import valorant_rulebook from "./rulebook/VALORANT_RULEBOOK.pdf";
 import bgmi_rulebook from "./rulebook/BGMI_RULEBOOK.pdf";
-import freefire_rulebook from "./rulebook/FREEFIRE_Rulebook.pdf";
+import freefire_rulebook from "./rulebook/FREEFIRE_RULEBOOK.pdf";
 import codm_rulebook from "./rulebook/CODM_Rulebook.pdf";
-import realcricket_rulebook from "./rulebook/Real_Cricket_rulebook.pdf";
+// import realcricket_rulebook from "./rulebook/Real_Cricket_rulebook.pdf";
 
 const eventsData = [
   {
@@ -139,6 +139,7 @@ const Espardha = () => {
                   className={styles.formlink}
                   target="_blank"
                   key={index}
+                  rel="noreferrer"
                 >
                   <div className={styles.cardcon}>
                     <div className={styles.cardimg}>
