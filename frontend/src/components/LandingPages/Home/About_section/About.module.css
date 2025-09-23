@@ -122,7 +122,6 @@ letter-spacing: 0%;
 
 /* Stats Box */
 .statsBox {
-  border: 2px solid rebeccapurple;
   position: absolute;
   bottom: 10%;
   right: 70px;
