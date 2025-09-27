@@ -7,7 +7,7 @@ import valorent from "./img/valorent.png";
 import bgmi from "./img/bgmi.png";
 import freefire from "./img/freefire1.png";
 import cod from "./img/CODM.png";
-// import realcricket from "./img/realcricket.png";
+import fifa from "./img/FIFA.png";
 import polygonb from "./img/poly.png";
 import polygonw from "./img/polyw.png";
 import polygonwi from "./img/polywi.png"
@@ -15,7 +15,7 @@ import valorant_rulebook from "./rulebook/VALORANT_RULEBOOK.pdf";
 import bgmi_rulebook from "./rulebook/BGMI_RULEBOOK.pdf";
 import freefire_rulebook from "./rulebook/FREEFIRE_RULEBOOK.pdf";
 import codm_rulebook from "./rulebook/CODM_Rulebook.pdf";
-// import realcricket_rulebook from "./rulebook/Real_Cricket_rulebook.pdf";
+import fifa_rulebook from "./rulebook/FIFA_rulebook.pdf";
 
 const eventsData = [
   {
@@ -46,13 +46,13 @@ const eventsData = [
     regLink: "https://forms.gle/4dFXAJd9adsvZqq1A",
     rulebook: codm_rulebook,
   },
-//   {
-//     title: "Fifa E-Spardha 2025",
-//     img: realcricket,
-//     fee: "Free",
-//     regLink: "https://forms.gle/jHcXKDf5tSNLek386",
-//     rulebook: realcricket_rulebook,
-//   },
+  {
+    title: "Fifa E-Spardha 2025",
+    img: fifa,
+    fee: "₹100/Person",
+    regLink: "https://forms.gle/77mKg5YV3dHAP9yaA",
+    rulebook: fifa_rulebook,
+  },
   ];
 
 const Espardha = () => {
@@ -63,8 +63,18 @@ const Espardha = () => {
 
   return (
     <>
-  <crousel />
-
+  {/* <crousel /> */}
+    <div 
+      style={{
+        backgroundImage: "url('/images/bg/hero-bg1.jpg')",
+        width: "100%",
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
+        overflow:"scroll"
+      }}
+    >
   <div className={styles.outermostdiv}>
     
     <img src={polygonw} alt="polygon" className={styles.polywhite} />
@@ -171,7 +181,7 @@ const Espardha = () => {
     {/* 🔹 Bottom White Polygon */}
     
   </div>
-
+</div>
 </>
 
   );
