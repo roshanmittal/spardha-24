@@ -129,14 +129,24 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* svg icons - using fill/currentColor */
-.social-icon {
-  width: 20px;
-  height: 20px;
+/* Social icons */
+.social-grid {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.social-link img {
+  width: 28px;   /* control size */
+  height: 28px;  /* keeps them uniform */
+  object-fit: contain;
   display: block;
-  /* inline svgs must use path fill="currentColor" or no hardcoded fill to inherit */
-  fill: currentColor;
-  transition: transform 0.18s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 /* Platform backgrounds */
@@ -197,15 +207,25 @@
   .footer-logo { width: 92px; margin-bottom: 16px; }
   .footer-main-content { padding: 40px 16px 14px; }
 }
+
 @media (max-width: 768px) {
-  .footer-logo { width: 80px; margin-bottom: 14px; }
   .footer-premium { padding: 40px 0 12px; }
+  .footer-logo { width: 80px; margin-bottom: 14px; }
+
+  /* collapse into 2 columns for tablets */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
+
 @media (max-width: 480px) {
   .footer-logo { width: 64px; margin-bottom: 12px; }
   .footer-main-content { padding: 30px 12px 10px; }
-}
-.social-link img {
-  width: 20px;
-  height: 20px;
+
+  /* stack into 1 column for mobile */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
