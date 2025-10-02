@@ -9,8 +9,8 @@ import freefire from "./img/freefire1.png";
 import cod from "./img/CODM.png";
 import fifa from "./img/FIFA.png";
 import polygonb from "./img/poly.png";
-import polygonw from "./img/polyw.png";
-import polygonwi from "./img/polywi.png"
+// import polygonw from "./img/polyw.png";
+// import polygonwi from "./img/polywi.png"
 import valorant_rulebook from "./rulebook/VALORANT_RULEBOOK.pdf";
 import bgmi_rulebook from "./rulebook/BGMI_RULEBOOK.pdf";
 import freefire_rulebook from "./rulebook/FREEFIRE_RULEBOOK.pdf";
@@ -66,7 +66,7 @@ const Espardha = () => {
   {/* <crousel /> */}
     <div 
       style={{
-        backgroundImage: "url('/images/bg/hero-bg1.jpg')",
+        backgroundImage: "url('/images/bg/hero-bg1-blur.png')",
         width: "100%",
         height: "100vh",
         backgroundSize: "cover",
@@ -77,9 +77,7 @@ const Espardha = () => {
     >
   <div className={styles.outermostdiv}>
     
-    <img src={polygonw} alt="polygon" className={styles.polywhite} />
   <img src={polygonb} alt="polygon" className={styles.polygonbg} />
-  <img src={polygonwi} alt="polygon" className={styles.polywi} />
     
 
     <section id="espardha" className={`${styles.ftco_section} ${styles.events}`}>

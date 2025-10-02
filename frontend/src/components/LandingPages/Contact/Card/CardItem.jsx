@@ -17,7 +17,7 @@ const CardItem = ({ mainImage, name, position, email, phone, linkedin, insta }) 
 
   return (
     <div
-      className={`contact-card${flipped ? ' flipped' : ''}`}
+      className={`contact-card${flipped ? ' flipped' : ''} card-name`}
       onClick={handleFlip}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
