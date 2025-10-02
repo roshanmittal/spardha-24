@@ -443,3 +443,7 @@ input:focus, textarea:focus {
     visibility: visible;
   }
 }
+
+.notice{
+  padding-left: 20px;
+}
