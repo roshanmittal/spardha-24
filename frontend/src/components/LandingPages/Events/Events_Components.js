@@ -2,7 +2,7 @@
 // import styles from './Events.module.css';
 // import { FaTimes } from 'react-icons/fa';
 
-// Import images
+// // Import images
 // import athletics from './image/athletics.png';
 // import basketball from './image/basketball.png';
 // import badminton from './image/badminton.png';
