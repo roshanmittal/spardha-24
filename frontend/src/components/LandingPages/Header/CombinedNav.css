@@ -4,8 +4,10 @@
   flex-direction: row;
   width: 100vw;
   overflow-x: hidden;
-  justify-content:space-evenly;
+  justify-content:space-between;
   align-items: center;
+  padding: 0.8rem 2rem;           /* spacing inside */
+  box-sizing: border-box;
   /* padding: 2rem 3rem; */
 }
 
@@ -64,10 +66,10 @@
   }
 }
 .navbar {
-  display: flex; /* or whatever original rule set */
-  align-items: center;
-  gap: 1.5rem;
-  justify-content: center;
+  flex: 1;                        /* take available space */
+  display: flex;
+  justify-content: center;        /* center the nav links */
+  align-items: center;  
 }
 
 .navbar ul {
@@ -145,7 +147,10 @@
 /* AUTH BUTTONS */
 .auth-buttons {
   display: flex;
+  flex-direction: row;
+  align-items: center;  
   gap: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .signup-btn, .login-btn {
