@@ -64,22 +64,22 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 0; /* Remove any bottom margin */
-
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .heroBackground {
   position: absolute;
-  top: 0; /* Start from very top */
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0; /* Extend to bottom */
+  bottom: 0;
   background: 
-    linear-gradient(135deg, rgba(74, 130, 246, 0.25) 0%, rgba(74, 130, 246, 0.15) 100%), /* More vibrant overlay */
+    linear-gradient(135deg, rgba(74, 130, 246, 0.25) 0%, rgba(74, 130, 246, 0.15) 100%),
     url('events-hero3.jpg') center/cover no-repeat;
   z-index: 1;
-  background-position: center top; /* Prioritize top part of image */
-  background-attachment: scroll; /* Ensure proper mobile behavior */
+  background-position: center top;
+  background-attachment: scroll;
 }
 
 .heroBackground::after {
@@ -91,9 +91,9 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(10, 10, 10, 0.75) 0%, /* Reduced opacity to show more background */
+    rgba(10, 10, 10, 0.75) 0%,
     rgba(26, 26, 46, 0.65) 50%,
-    rgba(22, 33, 62, 0.8) 100% /* Darker at bottom to allow cutting */
+    rgba(22, 33, 62, 0.8) 100%
   );
 }
 
@@ -238,7 +238,7 @@
 
 /* Events Grid Section */
 .eventsGridSection {
-  padding: 0 0 5rem 0; /* Remove top padding, keep bottom padding */
+  padding: 0 0 5rem 0;
   position: relative;
   margin-top: 0;
 }
@@ -251,14 +251,13 @@
   font-size: 1.1rem;
   margin-bottom: 2rem;
   padding: 15px 20px;
-  /* background: rgba(74, 130, 246, 0.1);
-  border-radius: 10px;  */
-  /* border: 1px solid rgba(74, 130, 246, 0.3); */
-  border-top: none;
+  background: rgba(74, 130, 246, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(74, 130, 246, 0.2);
   animation: pulseGlow 4s ease-in-out infinite;
   backdrop-filter: blur(10px);
+  margin-top: 0;
 }
-
 
 @keyframes pulseGlow {
   0%, 100% { 
@@ -269,33 +268,6 @@
   }
 }
 
-/* Hero Section - Ensure no bottom margin/padding */
-.heroSection {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 0;
-  padding-bottom: 0; /* Ensure no padding at bottom */
-}
-
-/* Optional: Add a subtle gradient transition */
-.heroBackground::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.75) 0%,
-    rgba(26, 26, 46, 0.65) 50%,
-    rgba(22, 33, 62, 0.9) 100% /* Darker at bottom for smooth transition */
-  );
-}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -338,15 +310,46 @@
   text-transform: uppercase;
 }
 
-/* Flip Card Styles */
-.flipCard {
-  background-color: transparent;
+/* -----------------------------
+   FLEX-BASED EVENTS GRID (NEW)
+   Replaces grid approach so last row centers
+   ----------------------------- */
+
+/* Wrapper that centers the events grid block */
+.eventsGridContainer {
   width: 100%;
-  height: 400px;
-  perspective: 1000px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
+/* Flex layout: wraps and centers last row naturally */
+.eventsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* this centers the last, partial row */
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Each card is responsive via flex-basis */
+.flipCard {
+  flex: 1 1 320px;    /* grow | shrink | basis */
+  max-width: 350px;
+  min-width: 260px;
+  height: 400px;
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0; /* spacing handled by gap */
+}
+
+/* Keep existing inner/card styles (unchanged) */
 .flipCardInner {
   position: relative;
   width: 100%;
@@ -432,14 +435,6 @@
   overflow: hidden;
 }
 
-/* Events Grid */
-.eventsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  padding: 0 1rem;
-}
-
 /* Front Side Content */
 .eventImageContainer {
   width: 160px;
@@ -491,6 +486,7 @@
   text-shadow: 0 0 15px rgba(74, 130, 246, 0.5), 0 0 25px rgba(74, 130, 246, 0.3);
   letter-spacing: 2px;
 }
+
 .contactsLink {
   display: inline-block;
   padding: 12px 24px;
@@ -648,161 +644,80 @@
   font-family: 'Exo 2', sans-serif;
 }
 
-/* Responsive Design */
+/* ---------- Responsive overrides for flex-grid (ensures consistent sizing) ---------- */
+
+@media (min-width: 1201px) {
+  .eventsGrid { max-width: 1400px; gap: 2.5rem; }
+  .flipCard { flex-basis: 320px; max-width: 350px; height: 400px; }
+}
+
+@media (max-width: 1200px) {
+  .container { max-width: 1000px; }
+  .eventsGrid { max-width: 1000px; gap: 2rem; }
+  .flipCard { flex-basis: 300px; max-width: 320px; height: 380px; }
+}
+
+@media (max-width: 1024px) {
+  .heroTitle { font-size: 4.5rem; }
+  .sectionTitle { font-size: 3rem; }
+  .eventsGrid { gap: 1.8rem; }
+  .flipCard { flex-basis: 280px; width: auto; height: 380px; min-width: 240px; }
+}
+
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 3.5rem;
-    letter-spacing: 3px;
-  }
-    .eventsGridSection {
-    padding: 0 0 3rem 0; /* Remove top padding on mobile too */
-  }
-  
-  .eventsGridSection::before {
-    font-size: 1rem;
-    padding: 12px 15px;
-    margin-bottom: 1.5rem;
-    border-radius: 0 0 12px 12px;
-  }
-  
-  .heroSubtitle {
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-  }
-  
-  /* Mobile-specific background positioning */
-  .heroBackground {
-    background-position: center 30%; /* Slightly lower on mobile to show more top content */
-  }
-  
-  .eventsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
+  .heroTitle { font-size: 3.5rem; letter-spacing: 3px; }
+  .eventsGridSection { padding: 0 0 3rem 0; }
+  .eventsGridSection::before { font-size: 1rem; padding: 12px 15px; margin-bottom: 1.5rem; border-radius: 0 0 12px 12px; }
+  .heroSubtitle { font-size: 1.6rem; letter-spacing: 2px; }
+  .heroBackground { background-position: center 30%; }
+  .eventsGrid { gap: 1.5rem; padding: 0 0.5rem; }
+  .reverseButton { top: 6px; right: 6px; width: 32px; height: 32px; font-size: 1.1rem; }
+  .flipCard { height: 350px; min-width: 220px; }
+  .eventImageContainer { width: 140px; height: 140px; padding: 25px; }
+  .eventImage { width: 90px; height: 90px; }
+  .eventName { font-size: 1.4rem; }
+  .sectionTitle { font-size: 2.5rem; }
+  .heroRegisterBtn { padding: 18px 40px; font-size: 1.2rem; }
+  .captainDetails { padding: 1rem; }
+  .captainName { font-size: 1.1rem; }
+  .contactsHeader { font-size: 1.6rem; padding: 1.2rem 1.5rem 0.8rem; }
+  .captainsContainer { padding: 0 1.5rem 1.5rem; }
+}
 
-  .reverseButton {
-    top: 6px;
-    right: 6px;
-    width: 32px;
-    height: 32px;
-    font-size: 1.1rem;
-  }
-  
-  .flipCard {
-    height: 350px;
-  }
-  
-  .eventImageContainer {
-    width: 140px; /* Increased from 120px */
-    height: 140px; /* Increased from 120px */
-    padding: 25px; /* Adjusted padding */
-  }
-  
-  .eventImage {
-    width: 90px; /* Increased from 70px */
-    height: 90px; /* Increased from 70px */
-  }
-  
-  .eventName {
-    font-size: 1.4rem;
-  }
-  
-  .sectionTitle {
-    font-size: 2.5rem;
-  }
-  
-  .heroRegisterBtn {
-    padding: 18px 40px;
-    font-size: 1.2rem;
-  }
-
-  .captainDetails {
-    padding: 1rem;
-  }
-
-  .captainName {
-    font-size: 1.1rem;
-  }
-
-  .contactsHeader {
-    font-size: 1.6rem;
-  }
+@media (max-width: 640px) {
+  .eventsGrid { gap: 1.5rem; max-width: 400px; margin: 0 auto; }
+  .flipCard { flex-basis: 100%; max-width: 100%; height: 340px; min-width: unset; }
+  .heroTitle { font-size: 3rem; }
+  .heroSubtitle { font-size: 1.4rem; }
+  .sectionTitle { font-size: 2.2rem; }
 }
 
 @media (max-width: 480px) {
-    .eventImageContainer {
-    width: 130px; /* Increased from original mobile size */
-    height: 130px; /* Increased from original mobile size */
-    padding: 22px; /* Adjusted padding */
-  }
-  
-  .eventImage {
-    width: 85px; /* Increased from original mobile size */
-    height: 85px; /* Increased from original mobile size */
-  }
-  .heroSection {
-    height: 60vh;
-  }
-  
-  .captainDetails {
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .captainInfo span {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  
-  .contactsHeader {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .flipCardBack {
-    padding: 1.5rem 1rem;
-  }
-  
-  .heroTitle {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-  
-  .heroSubtitle {
-    font-size: 1.3rem;
-    letter-spacing: 1.5px;
-  }
-  
-  .eventsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-    .eventsGridSection {
-    padding: 0 0 2rem 0; /* Remove top padding on mobile */
-  }
-  
-  .eventsGridSection::before {
-    font-size: 0.9rem;
-    padding: 10px 12px;
-    margin-bottom: 1rem;
-    border-radius: 0 0 10px 10px;
-  }
-  .sectionTitle {
-    font-size: 2rem;
-  }
-  
-  .heroRegisterBtn {
-    padding: 16px 35px;
-    font-size: 1.1rem;
-  }
-
-  .flipCard {
-    height: 320px;
-  }
-  
-  /* Extra small devices - prioritize top even more */
-  .heroBackground {
-    background-position: center top;
-  }
+  .eventImageContainer { width: 130px; height: 130px; padding: 22px; }
+  .eventImage { width: 85px; height: 85px; }
+  .heroSection { height: 60vh; }
+  .captainDetails { padding: 1rem; margin-bottom: 1rem; }
+  .captainInfo span { font-size: 0.85rem; line-height: 1.5; }
+  .contactsHeader { font-size: 1.4rem; padding: 1rem 1.2rem 0.8rem; }
+  .flipCardBack { padding: 1.5rem 1rem; }
+  .heroTitle { font-size: 2.5rem; letter-spacing: 2px; }
+  .heroSubtitle { font-size: 1.3rem; letter-spacing: 1.5px; }
+  .eventsGrid { gap: 1.2rem; padding: 0 0.5rem; }
+  .eventsGridSection { padding: 0 0 2rem 0; }
+  .eventsGridSection::before { font-size: 0.9rem; padding: 10px 12px; margin-bottom: 1rem; border-radius: 0 0 10px 10px; }
+  .sectionTitle { font-size: 2rem; }
+  .heroRegisterBtn { padding: 16px 35px; font-size: 1.1rem; }
+  .flipCard { height: 320px; }
+  .container { padding: 0 15px; }
 }
 
+@media (max-width: 360px) {
+  .heroTitle { font-size: 2.2rem; }
+  .heroSubtitle { font-size: 1.1rem; }
+  .eventsGrid { gap: 1rem; }
+  .flipCard { height: 300px; }
+  .eventImageContainer { width: 120px; height: 120px; padding: 20px; }
+  .eventImage { width: 80px; height: 80px; }
+  .eventName { font-size: 1.2rem; }
+  .heroRegisterBtn { padding: 14px 30px; font-size: 1rem; }
+}
