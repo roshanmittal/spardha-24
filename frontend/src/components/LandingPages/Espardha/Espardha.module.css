@@ -77,6 +77,41 @@
   overflow: visible; 
   text-align: center;
   color: white;
+
+
+
+  --notch-width: clamp(160px, 20vw, 280px);
+  --notch-depth: clamp(20px, 4vw, 40px);
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(50% - (var(--notch-width) / 2)) 0,
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) var(--notch-depth),
+    calc(50% + (var(--notch-width) / 2)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% + (var(--notch-width) / 2)) 100%,
+    calc(50% + (var(--notch-width) / 2) - var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2) + var(--notch-depth)) calc(100% - var(--notch-depth)),
+    calc(50% - (var(--notch-width) / 2)) 100%,
+    0 100%
+  );
+
+
 }
 
 /* Responsive adjustments for polygons */
