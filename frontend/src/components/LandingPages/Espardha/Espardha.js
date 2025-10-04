@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import styles from "./Espardha.module.css";
 import poster from "./img/poster25.png";
 import controler from "./img/control.png";
-// import pdf from "./ESPARDHA24.pdf";
 import valorent from "./img/valorent.png";
 import bgmi from "./img/bgmi.png";
-import freefire from "./img/freefire1.png";
+// import freefire from "./img/freefire1.png";
 import cod from "./img/CODM.png";
 import fifa from "./img/FIFA.png";
 import polygonb from "./img/poly.png";
-// import polygonw from "./img/polyw.png";
-// import polygonwi from "./img/polywi.png"
 import valorant_rulebook from "./rulebook/VALORANT_RULEBOOK.pdf";
 import bgmi_rulebook from "./rulebook/BGMI_RULEBOOK.pdf";
-import freefire_rulebook from "./rulebook/FREEFIRE_RULEBOOK.pdf";
+// import freefire_rulebook from "./rulebook/FREEFIRE_RULEBOOK.pdf";
 import codm_rulebook from "./rulebook/CODM_Rulebook.pdf";
 import fifa_rulebook from "./rulebook/FIFA_rulebook.pdf";
 
@@ -32,13 +29,13 @@ const eventsData = [
     regLink: "https://forms.gle/MP4LPtveVJhpzbLs5",
     rulebook: bgmi_rulebook,
   },
-  {
-    title: "Free Fire E-Spardha 2025",
-    img: freefire,
-    fee: "₹120/Person",
-    regLink: "https://forms.gle/ef5ExuEMofxjL9SP9",
-    rulebook: freefire_rulebook,
-  },
+  // {
+  //   title: "Free Fire E-Spardha 2025",
+  //   img: freefire,
+  //   fee: "₹120/Person",
+  //   regLink: "https://forms.gle/ef5ExuEMofxjL9SP9",
+  //   rulebook: freefire_rulebook,
+  // },
   {
     title: "Call Of Duty Mobile E-Spardha 2025",
     img: cod,
