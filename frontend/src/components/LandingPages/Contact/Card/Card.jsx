@@ -38,16 +38,13 @@ const Card = () => {
         position: "Convener",
         mainImage: '/images/teams_images/heads/Convenor2.jpg',
         email: "devang.darpe.cer22@itbhu.ac.in",
-        // phone: "+91-9000000001",
         linkedin: "https://www.linkedin.com/in/devang-darpe-a09501256",
-        // insta: "https://instagram.com/devangdarpe"
       },
       {
         name: "Riddhi Rangari",
         position: "Co-convener",
         mainImage: '/images/teams_images/heads/Co-convenorw.jpg',
         email: "riddhi.rangari.mst22@itbhu.ac.in",
-        // phone: "+91-9000000002",
         linkedin: "https://www.linkedin.com/in/riddhi-rangari-583a0125a",
         insta: "https://www.instagram.com/riddhiii.i"
       },
@@ -56,7 +53,6 @@ const Card = () => {
         position: "Co-convener",
         mainImage: '/images/teams_images/heads/Co-convenor21.jpg',
         email: "suraj.kumar.min22@itbhu.ac.in",
-        // phone: "+91-9000000003",
         linkedin: "https://www.linkedin.com/in/suraj-kumar-3578a1258",
         insta: "https://www.instagram.com/kr_srj23"
       },
@@ -65,7 +61,6 @@ const Card = () => {
         position: "Co-convener",
         mainImage: '/images/teams_images/heads/Co-convenor22.jpg',
         email: "aditya.amarnath.cer22@itbhu.ac.in",
-        // phone: "+91-9000000004",
         linkedin: "https://www.linkedin.com/in/aditya-amarnath-82663a22b",
         insta: "https://www.instagram.com/aditya_amarnath18/"
       }
@@ -77,8 +72,6 @@ const Card = () => {
         mainImage: '/images/teams_images/default.svg',
         email: "gudipati.pranavreddy.min23@itbhu.ac.in",
         phone: "+91 9032348290",
-        // linkedin: "https://linkedin.com/in/pranavreddy",
-        // insta: "https://instagram.com/pranavreddy"
       },
       {
         name: "Deepak",
@@ -86,8 +79,6 @@ const Card = () => {
         mainImage: '/images/teams_images/default.svg',
         email: "deepak.student.phe23@itbhu.ac.in",
         phone: "+91 8307778018",
-        // linkedin: "https://linkedin.com/in/deepak",
-        // insta: "https://instagram.com/deepak"
       },
       {
         name: "Ajay Meena",
@@ -95,8 +86,6 @@ const Card = () => {
         mainImage: '/images/teams_images/publi/ajay.jpg',
         email: "ajay.meena.che23@itbhu.ac.in",
         phone: "+91 8076203750",
-        // linkedin: "https://linkedin.com/in/ajaymeena",
-        // insta: "https://instagram.com/ajaymeena"
       }
     ],
     'Marketing': [
@@ -106,8 +95,6 @@ const Card = () => {
         mainImage: '/images/teams_images/marketing/sri.jpg',
         email: "sriyog.holkar.cse23@itbhu.ac.in",
         phone: "+91 9019746667",
-        // linkedin: "https://linkedin.com/in/sriyogholkar",
-        // insta: "https://instagram.com/sriyogholkar"
       },
       {
         name: "Abhishek Biradar",
@@ -115,8 +102,6 @@ const Card = () => {
         mainImage: '/images/teams_images/marketing/abhishek.jpg',
         email: "abhishek.biradar.phe23@itbhu.ac.in",
         phone: "+91 9380041488",
-        // linkedin: "https://linkedin.com/in/abhishekbiradar",
-        // insta: "https://instagram.com/abhishekbiradar"
       },
       {
         name: "Md Kaif",
@@ -124,8 +109,6 @@ const Card = () => {
         mainImage: '/images/teams_images/marketing/kaif.jpg',
         email: "md.kaif.cer23@itbhu.ac.in",
         phone: "+91 9142994832",
-        // linkedin: "https://linkedin.com/in/kaif",
-        // insta: "https://instagram.com/kaif"
       }
     ],
     'Events': [
@@ -135,8 +118,6 @@ const Card = () => {
         mainImage: '/images/teams_images/Events/pasasnk.jpg',
         email: "psasank.eswarvamsy.phy23@itbhu.ac.in",
         phone: "+91 9010404545",
-        // linkedin: "https://linkedin.com/in/psasankeswarvamsy",
-        // insta: "https://instagram.com/psasankeswarvamsy"
       },
       {
         name: "Grishma Tembhurne",
@@ -144,8 +125,6 @@ const Card = () => {
         mainImage: '/images/teams_images/default.svg',
         email: "grishma.stembhurne.che23@itbhu.ac.in",
         phone: "+91 9322192403",
-        // linkedin: "https://linkedin.com/in/grishma",
-        // insta: "https://instagram.com/grishma"
       },
       {
         name: "Pavan Punj Bais",
@@ -153,8 +132,6 @@ const Card = () => {
         mainImage: '/images/teams_images/Events/pavan.jpg',
         email: "pavanpunj.bais.min23@itbhu.ac.in",
         phone: "+91 9329008865",
-        // linkedin: "https://linkedin.com/in/pavanpunj",
-        // insta: "https://instagram.com/pavanpunj"
       }
     ],
     'Hospitality': [
@@ -164,8 +141,6 @@ const Card = () => {
         mainImage: '/images/teams_images/hospi/ashok.jpg',
         email: "ashok.kmeena.civ23@itbhu.ac.in",
         phone: "+91 8306460439",
-        // linkedin: "https://linkedin.com/in/ashokkumar",
-        // insta: "https://instagram.com/ashokkumar"
       },
       {
         name: "Piyush Kumar Pakad",
@@ -173,8 +148,6 @@ const Card = () => {
         mainImage: '/images/teams_images/hospi/piyushpaakad.jpg',
         email: "piyushkr.pakad.cse23@itbhu.ac.in",
         phone: "+91 9351966135",
-        // linkedin: "https://linkedin.com/in/piyushkumar",
-        // insta: "https://instagram.com/piyushkumar"
       },
       {
         name: "Shweta Singh",
@@ -182,8 +155,6 @@ const Card = () => {
         mainImage: '/images/teams_images//hospi/swetha.jpg',
         email: "shweta.singh.cer23@itbhu.ac.in",
         phone: "+91 8439960289",
-        // linkedin: "https://linkedin.com/in/shweta",
-        // insta: "https://instagram.com/shweta"
       }
     ],
     'Technical': [
@@ -202,14 +173,23 @@ const Card = () => {
         mainImage: '/images/teams_images/Technical/roshan.jpg',
         email: "roshan.mittal.che23@itbhu.ac.in",
         phone: "+91 9508287199",
-        // linkedin: "https://linkedin.com/in/roshanmittal",
-        // insta: "https://instagram.com/roshanmittal"
       }
     ]
   };
 
   return (
     <section id='contactus'>
+      {selectedCategory!=='Conveners'?" ":
+      <>       <h1 className="conveners-title">OUR CONVENERS</h1>
+        <p className="conveners-subtitle">
+          "Behind the grandeur of Spardha stand our conveners, whose relentless efforts and inspiring leadership transform ideas into reality. With their guidance, the fest continues to grow as a symbol of energy, passion, and sporting excellence at IIT BHU."
+          <br/>
+        </p></>
+}
+          <div className='notice'>
+          <br/>
+            🔄Hover the cards to view contacts🔄
+          </div>
       <div className='container glass-card-container'>
       <div className="outermostcard">
         <div className="category-nav" ref={menuRef}>
