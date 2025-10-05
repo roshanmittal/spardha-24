@@ -1,6 +1,6 @@
 .contact-card {
- width: 300px;
- height: 360px;
+  width: clamp(200px, 80vw, 300px);   /* shrinks on small, max 300px */
+  height: clamp(240px, 90vw, 360px);  /* proportional height */
  perspective: 1000px;
  cursor: pointer;
  margin: 0;
@@ -281,4 +281,22 @@
 }
 .contact-card-socials {
  animation: fadeInUp 1s ease;
+}
+@media (max-width: 375px) {
+  .contact-card-info {
+    font-size: 0.6rem;      /* slightly smaller text */
+    padding: 10px 12px;     /* reduce padding so text fits */
+    align-items: center;
+  }
+
+  .contact-card-info button.copy-btn {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
+}
+@media (max-width: 375px) {
+  .contact-card {
+    width: 100%;         /* full width on very small screens */
+    align-items: center;
+  }
 }
