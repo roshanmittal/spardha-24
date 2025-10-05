@@ -42,8 +42,9 @@ const HomeContact = () => {
         {/* Left Section */}
         <div className={styles.left}>
           <div className={styles.leftInner}>
+          <h1 className={styles.heading}>Contact Us</h1>
           <h1 className={styles.heading}>GET IN TOUCH</h1>
-          <p className={styles.subheading}>SPARDHA UNLEASHING POTENTIAL</p>
+          <p className={styles.subheading}>❇️SPARDHA UNLEASHING POTENTIAL</p>
 </div>
         </div>
 

@@ -211,6 +211,7 @@ const Card = () => {
   return (
     <section id='contactus'>
       <div className='container glass-card-container'>
+      <div className="outermostcard">
         <div className="category-nav" ref={menuRef}>
           <button className='hamburger' onClick={toggleMenu}>
             &#9776;
@@ -242,6 +243,7 @@ const Card = () => {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
